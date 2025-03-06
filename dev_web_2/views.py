@@ -1,7 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
-def hello(request):
-    return HttpResponse('Hello, Django!')
-
-def hello2 (request): 
-    return HttpResponse('Hello, Django! 2')
+def testRender(request):
+    return render(request, 'first.html')
