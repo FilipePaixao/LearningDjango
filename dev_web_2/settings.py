@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dev_web_2',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'dev_web_2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Database engine
+        'NAME': 'pwpessoas',  # Database name
+        'USER': os.getenv('DB_USER'),  # Database user
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Database password
+        'HOST': os.getenv('HOST'),  # Database host
+        'PORT': os.getenv('PORT'),  # Database port
     }
 }
 
